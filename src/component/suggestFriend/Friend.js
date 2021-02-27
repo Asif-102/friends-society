@@ -20,10 +20,14 @@ const Friend = () => {
       setCart(newCart);
     }
    
+    // console.log(friend);
     return (
         <div className="suggestFriend">
             <div className="friends-container">
-                <FriendsInfo userInfo = {friend} key={friend.map(frnd => frnd.id)} handleAddFriend={handleAddFriend}></FriendsInfo>
+                {/* <FriendsInfo userInfo = {friend} handleAddFriend={handleAddFriend}></FriendsInfo> */}
+                {
+                    friend.map(frnd=><FriendsInfo userInfo={frnd} key={frnd.id} handleAddFriend={handleAddFriend}></FriendsInfo>)
+                }
             </div>
             <div className="friends-cart">
                 <FriendsCart cart={cart}></FriendsCart>
